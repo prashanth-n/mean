@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 var User = require('../models/admin.login.model');
 exports.adminLogin = function (req, res) {
-    console.log('login req', req.body)
+    console.log('login req', req.body);
     var userName = req.body.userName;
     var usrPassword = req.body.userPassword;
     User.findOne({ userName: userName }, function (err, user) {

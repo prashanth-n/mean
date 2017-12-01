@@ -7,5 +7,7 @@ mongoose.connect('mongodb://127.0.0.1/adminApp');
 //app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 var routes = require('./app/models/admin.login.model')
-routes(app)
+//var actionROute = require('./app/models/admin.action.model')
+routes(app);
+//actionROute(app);
 app.listen(1234);
