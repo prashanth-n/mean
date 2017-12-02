@@ -6,7 +6,7 @@ var userSchema = new mongoose.Schema({
     lastName: String
 })
 var User = mongoose.model('testUser',userSchema)
-module.exports = User;
+module.exports = User
 
 var adminActionSchema = new mongoose.Schema({
     id: { type: Number, unique: true },
@@ -16,4 +16,4 @@ var adminActionSchema = new mongoose.Schema({
     repairPrice: { type: Number }
 })
 var adminAct = mongoose.model('adminaction', adminActionSchema)
-module.exports = adminAct;
+module.exports = adminAct

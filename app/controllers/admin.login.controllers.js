@@ -15,7 +15,7 @@ exports.adminLogin = function (req, res) {
                 return res.status(401).send('Password Incorrect');
             }
         } else {
-            return res.send(404).send()
+            return res.send(404).send('not found')
         }
         return res.status(200).send(user)
     })

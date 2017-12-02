@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-var adminAct = require('../models/admin.action.model');
+var adminAct = require('../models/admin.login.model');
 console.log('entering add device api')
 exports.addDevice = function(req, res){
 
@@ -7,7 +7,7 @@ exports.addDevice = function(req, res){
     var ownedBy = req.body.ownedBy;
     var purchasePrice = req.body.purchasePrice;
     var repairPrice = req.body.repairPrice;
-    var newDevice = new adminAct();
+    var newDevice = new adminAct()
     newDevice.deviceName = deviceName;
     newDevice.ownedBy = ownedBy;
     newDevice.purchasePrice = purchasePrice;
