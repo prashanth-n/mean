@@ -8,4 +8,4 @@ module.exports = function (app) {
 		.post(login.adminRegister)
 	 app.route('/addDevice')
 	 	.post(adminAction.addDevice)
-}	
+}

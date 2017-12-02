@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-var adminAct = require('../models/admin.login.model');
+var adminAct = require('../models/admin.action.model');
 console.log('entering add device api')
 exports.addDevice = function(req, res){
 
@@ -14,6 +14,7 @@ exports.addDevice = function(req, res){
     newDevice.repairPrice = repairPrice;
     newDevice.save(function(err,device){
         if(err){
+            console.log(err);
             return res.status(400).send({message:"something went wronf"})
         }
         return res.status(200).send(device);
