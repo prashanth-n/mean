@@ -3,9 +3,9 @@ var User = require('../models/admin.login.model');
 exports.adminLogin = function (req, res) {
     console.log('login req', req.body);
     var userName = req.body.userName;
-    var usrPassword = req.body.userPassword;
+    var usrPassword = req.body.usrPassword;
     User.findOne({ userName: userName }, function (err, user) {
-        console.log(user)
+        console.log(user.usrPassword,usrPassword);
         if (err) {
             console.log(err);
             return res.status(500).send()
@@ -15,7 +15,7 @@ exports.adminLogin = function (req, res) {
                 return res.status(401).send('Password Incorrect');
             }
         } else {
-            return res.send(404).send('not found')
+            return res.status(404).send('not found')
         }
         return res.status(200).send(user)
     })

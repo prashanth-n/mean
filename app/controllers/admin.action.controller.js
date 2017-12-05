@@ -20,3 +20,20 @@ exports.addDevice = function(req, res){
         return res.status(200).send(device);
     })
 }
+exports.getAllDevice = function(req,res){
+    adminAct.find().exec(function(err, devices){
+        if(err){
+            return res.status(500).send({
+                message:'Internal server error'
+            });
+        } else {
+            res.json(devices)
+        }
+        if(!devices.length){
+            return res.status(400).send({
+                message:'No devices found'
+            });
+        }
+
+    })
+}

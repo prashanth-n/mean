@@ -1,7 +1,6 @@
 var express = require('express');
 var mongoose = require('mongoose')
 var app = express();
-var route = express.Router();
 var bodyParser = require('body-parser');
 mongoose.Promise = global.Promise
 mongoose.connect('mongodb://127.0.0.1/adminApp')
