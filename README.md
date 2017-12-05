@@ -9,3 +9,5 @@ npm install
 node index.js
 
 open localhost:1212 in browser
+
+the app is still under development
