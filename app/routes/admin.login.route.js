@@ -10,4 +10,6 @@ module.exports = function (app) {
         .post(adminAction.addDevice)
     app.route('/getAllDevices')
         .post(adminAction.getAllDevice)
+    app.route('/getDeviceById')
+        .post(adminAction.getDeviceById)
 }

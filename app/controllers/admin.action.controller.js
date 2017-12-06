@@ -1,13 +1,13 @@
 var mongoose = require('mongoose');
 var adminAct = require('../models/admin.action.model');
-console.log('entering add device api')
+console.log('entering add device api');
 exports.addDevice = function(req, res){
 
     var deviceName = req.body.deviceName;
     var ownedBy = req.body.ownedBy;
     var purchasePrice = req.body.purchasePrice;
     var repairPrice = req.body.repairPrice;
-    var newDevice = new adminAct()
+    var newDevice = new adminAct();
     newDevice.deviceName = deviceName;
     newDevice.ownedBy = ownedBy;
     newDevice.purchasePrice = purchasePrice;
@@ -36,4 +36,16 @@ exports.getAllDevice = function(req,res){
         }
 
     })
-}
+};
+exports.getDeviceById = function(req,res){
+    var id = req.body.id;
+    adminAct.findById(id,function(err, device){
+        if(err){
+            return res.status(400).send({
+                message:'No devices found'
+            });
+        }
+        console.log(device);
+        return res.status(200).send(device);
+    })
+};
