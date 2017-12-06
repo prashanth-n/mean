@@ -19,7 +19,7 @@ exports.addDevice = function(req, res){
         }
         return res.status(200).send(device);
     })
-}
+};
 exports.getAllDevice = function(req,res){
     adminAct.find().exec(function(err, devices){
         if(err){
