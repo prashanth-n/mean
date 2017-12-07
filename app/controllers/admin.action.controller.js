@@ -49,3 +49,26 @@ exports.getDeviceById = function(req,res){
         return res.status(200).send(device);
     })
 };
+exports.updateDeviceDetails = function (req, res) {
+    var reqBody = req.body;
+    console.log("reqBody",reqBody);
+    adminAct.findByIdAndUpdate({_id:reqBody._id},
+        {
+            $set:{
+                repairPrice:reqBody.repairPrice,
+                purchasePrice:reqBody.purchasePrice,
+                ownedBy:reqBody.ownedBy,
+                deviceName:reqBody.deviceName
+               }
+        },function (err, reqBody) {
+        if(err){
+            return res.status(500).send({
+                message:'Something went wrong'
+            });
+        }
+        console.log('updated Obj',reqBody);
+        return res.status(200).send({
+            message:'Updates Successfully'
+        });
+    })
+};

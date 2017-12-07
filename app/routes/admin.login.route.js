@@ -12,4 +12,6 @@ module.exports = function (app) {
         .post(adminAction.getAllDevice);
     app.route('/getDeviceById')
         .post(adminAction.getDeviceById);
+    app.route('/updateDeviceDetails')
+        .post(adminAction.updateDeviceDetails);
 };
