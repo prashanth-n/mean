@@ -4,6 +4,6 @@ var adminActionSchema = new mongoose.Schema({
     ownedBy: { type: String },
     purchasePrice: { type: Number },
     repairPrice: { type: Number }
-})
+});
 var adminAct = mongoose.model('adminaction', adminActionSchema)
-module.exports = adminAct
+module.exports = adminAct;

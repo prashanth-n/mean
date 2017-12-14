@@ -4,6 +4,6 @@ var userSchema = new mongoose.Schema({
     usrPassword: { type: String },
     firstName: String,
     lastName: String
-})
+});
 var User = mongoose.model('testUser',userSchema)
-module.exports = User
+module.exports = User;
